@@ -9,3 +9,19 @@
   padding-top: 8px;
   padding-bottom: 10px;
 }
+
+#menu {
+  background-color: #253A46;
+  
+  padding: 22px;
+  font-size: 22px;
+}
+
+#menu a {
+  color: #FFFFFF;
+  padding-right: 22px;
+}
+
+body{
+  margin: 0;
+}
