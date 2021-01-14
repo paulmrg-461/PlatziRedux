@@ -1,37 +1,36 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      users: [
-        {
-          name: 'Paul Realpe',
-          email: 'paulmrg461@gmail.com',
-          website: 'https://paulrealpe.com'
-        },
-        {
-          name: 'Rafael Belalcázar',
-          email: 'rafabelalkzar17@gmail.com',
-          website: 'https://rafabelalcazar.com'
-        },
-      ]
+      users: []
     }
   }
 
-  getRows = () => [
-    <tr>
-      <td>
-        Paul Realpe
-      </td>
-      <td>
-        paulmrg461@gmail.com
-      </td>
-      <td>
-        https://paulrealpe.com
-      </td>
-    </tr>
-  ];
+  async componentDidMount(){
+    const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+    this.setState({
+      users: response.data
+    })
+  }
+
+  getRows = () => (
+    this.state.users.map((user) => (
+      <tr key={user.id}>
+        <td>
+          { user.name }
+        </td>
+        <td>
+          { user.email }
+        </td>
+        <td>
+          { user.website }
+        </td>
+      </tr>
+    ))
+  );
   
   render() {
     return(
