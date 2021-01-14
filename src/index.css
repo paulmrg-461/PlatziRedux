@@ -1,0 +1,11 @@
+.margin{
+  margin: 36px;
+}
+.table{
+  width: 100%;
+  text-align: left;
+}
+.table td{
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
