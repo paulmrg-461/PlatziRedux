@@ -7,8 +7,10 @@ import Task from './Task';
 const App = () => (
   <BrowserRouter>
     <Menu/>
-    <Route exact path="/" component={ Users } />
-    <Route exact path="/tareas" component={ Task } />
+    <div className="margin">
+      <Route exact path="/" component={ Users } />
+      <Route exact path="/tareas" component={ Task } />
+    </div>
   </BrowserRouter>
 );
 
