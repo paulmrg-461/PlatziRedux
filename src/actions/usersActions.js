@@ -15,7 +15,7 @@ export const getUsers = () => async (dispatch) => {
         console.log('Ups! error: ', error.message);
         dispatch({
             type: ERROR,
-            payload: error.message
+            payload: `Ups! ha ocurrido un error: ${error.message}`
         })
     }
 }
